@@ -1,29 +1,14 @@
 import { Component } from '@angular/core';
-import { Task } from './Task';
-import { TasksService } from './tasks.service';
+import { RouterOutlet } from '@angular/router';
+import { BusinessCardComponent } from './business-card/business-card.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,BusinessCardComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Lista zadań';
-  zadania: Array<Task>;
-  categories: string[] = [];
-
-  constructor(private taskService: TasksService) {
-    this.zadania = taskService.getTasks();
-    this.zadania.forEach(el => {
-      if (!this.categories.includes(el.$category)) {
-        this.categories.push(el.$category);
-      }
-    });
-  }
-
-  addTask(task: Task) {
-    console.log(task.$name, task.$category);
-    this.zadania.push(new Task(task.$name, false, task.$category));
-  }
-
+  title = 'BusinessApp';
 }

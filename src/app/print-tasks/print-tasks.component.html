@@ -1,7 +1,0 @@
-{{category}}
-
-    <div *ngFor="let task of zadania;index as id" [class.todo]="!task.done"  [class.done]="task.done">
-        <span *ngIf="task.category===category">{{task.name}}</span>
-      
-    </div>
-  
