@@ -1,0 +1,18 @@
+<p>Dodaj nowe zadanie:</p>
+<label>Podaj nazwę zadania: </label><input type="text" [(ngModel)]="newTask.name"/>
+<label>Podaj kategorię zadania: </label><input type="text" [(ngModel)]="newTask.category"/>
+<button (click)="addNewTask()">Dodaj</button>
+
+<div>{{ 200 | currency:'symbol':'$' }}</div>
+<div>{{ 200 | currency:'PLN':'zł' }}</div>
+<div>Ocena: {{3.5 | number:'1.1-1':'en'}}</div>
+
+<div>
+    <p>Without JSON pipe:</p>
+    <pre>{{obj}}</pre>
+    <p>With JSON pipe:</p>
+    <pre>{{obj | json}}</pre>
+  </div>
+
+  <div>{{dzis | date:'medium'}}</div>
+  <div>{{dzis | plDate}}</div>
